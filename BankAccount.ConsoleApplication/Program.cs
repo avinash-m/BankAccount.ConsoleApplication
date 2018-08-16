@@ -25,10 +25,22 @@ namespace BankAccount.ConsoleApplication
                 Account newAccount = new Account();
                 newAccount.GetDetails();
                 accounts.Add(newAccount);
+                Console.Write("Please enter the withdraw amount: ");
+                double withdraw = Convert.ToDouble(Console.ReadLine());
+                newAccount.Withdraw(withdraw);
+                Console.Write("Do you want to add new account (Y/N): ");
+                userInput = Console.ReadLine();
             }
 
 
-            
+            DisplayAccounts(accounts);
+        }
+
+        static void DisplayAccounts(List<Account> accounts)
+        {
+            Console.WriteLine($"\nName\t\t\tAge\tAccountNumber\tBalance");
+            foreach (Account a in accounts)
+                a.ShowDetails();
         }
     }
 }

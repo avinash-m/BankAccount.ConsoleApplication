@@ -33,7 +33,7 @@ namespace BankAccount.ConsoleApplication
 
         public void ShowDetails()
         {
-            Console.WriteLine($"\nName: {Name}\tAge: {Age}\tAccount Number:{AccountNumber}\tBalance:{Balance}");
+            Console.WriteLine($"{Name, -20}\t{Age, 3}\t{AccountNumber, 5}\t\t{Balance, 7}");
         }
 
     }
