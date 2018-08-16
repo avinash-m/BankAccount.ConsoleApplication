@@ -7,7 +7,7 @@ namespace BankAccount.ConsoleApplication
         public string Name { get; set; }
         public int Age { get; set; }
         public string AccountNumber { get; set; }
-        public int Balance { get; set; }
+        public double Balance { get; set; }
 
         public void GetDetails()
         {
@@ -23,10 +23,17 @@ namespace BankAccount.ConsoleApplication
 
         public void Withdraw(double withdrawAmount)
         {
-            if (withdrawAmount <= Amount)
+            if (withdrawAmount <= Balance)
                 Balance -= withdrawAmount;
             else
                 Console.WriteLine("Withdraw amount is more than the available balance.");
+
+            Console.WriteLine($"Balance: {Balance}");
+        }
+
+        public void ShowDetails()
+        {
+            Console.WriteLine($"\nName: {Name}\tAge: {Age}\tAccount Number:{AccountNumber}\tBalance:{Balance}");
         }
 
     }
