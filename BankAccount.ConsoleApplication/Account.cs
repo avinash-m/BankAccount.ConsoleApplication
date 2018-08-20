@@ -11,14 +11,21 @@ namespace BankAccount.ConsoleApplication
 
         public void GetDetails()
         {
-            Console.Write("Enter name: ");
-            Name = Console.ReadLine();
-            Console.Write("Enter age: ");
-            Age = Convert.ToInt16(Console.ReadLine());
-            Console.Write("Enter account number: ");
-            AccountNumber = Console.ReadLine();
-            Console.Write("Enter amount to deposit: ");
-            Balance = Convert.ToDouble(Console.ReadLine());
+            try
+            {
+                Console.Write("Enter name: ");
+                Name = Console.ReadLine();
+                Console.Write("Enter age: ");
+                Age = Convert.ToInt16(Console.ReadLine());
+                Console.Write("Enter account number: ");
+                AccountNumber = Console.ReadLine();
+                Console.Write("Enter amount to deposit: ");
+                Balance = Convert.ToDouble(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Invalid input: {e.Message}");
+            }
         }
 
         public void Withdraw(double withdrawAmount)
